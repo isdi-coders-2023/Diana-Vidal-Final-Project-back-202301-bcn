@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "test": "jest test --passWithNoTests",
+    "test:coverage": "jest test --coverage --watchAll=false --passWithNoTests",
     "build:dev": "tsc --watch",
     "start": "node dist",
     "start:dev": "node --watch dist",
