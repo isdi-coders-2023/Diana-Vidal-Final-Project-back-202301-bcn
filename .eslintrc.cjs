@@ -4,7 +4,7 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: "xo",
+  extends: ["xo", "prettier"],
   overrides: [
     {
       extends: ["xo-typescript"],
