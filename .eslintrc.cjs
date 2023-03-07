@@ -11,6 +11,10 @@ module.exports = {
       files: ["*.ts", "*.tsx"],
       rules: { "@typescript-eslint/consistent-type-assertions": "off" },
     },
+    {
+      files: ["src/**/models/**/*.ts"],
+      rules: { "@typescript-eslint/naming-convention": "off" },
+    },
   ],
   parserOptions: {
     ecmaVersion: "latest",
