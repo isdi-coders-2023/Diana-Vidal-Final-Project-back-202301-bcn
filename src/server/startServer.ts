@@ -1,7 +1,7 @@
 import createDebug from "debug";
 import { app } from "./app.js";
 
-const debug = createDebug("users:startServer");
+const debug = createDebug("openboards:startServer");
 
 const startServer = async (port: number) =>
   new Promise((resolve) => {

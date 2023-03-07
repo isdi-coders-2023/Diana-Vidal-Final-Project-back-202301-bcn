@@ -1,7 +1,7 @@
 import CustomError from "./CustomError";
 
-describe("Given a CustomError class", () => {
-  describe("When catch an error with the status 404", () => {
+describe("Given the CustomError class", () => {
+  describe("When it's instanciated with catch an error with the status 404", () => {
     const expectedCustomError = {
       message: "Endpoint not found",
       statusCode: 404,
@@ -13,19 +13,22 @@ describe("Given a CustomError class", () => {
       expectedCustomError.statusCode,
       expectedCustomError.publicMessage
     );
-    test("Then it should get the status 404", () => {
+
+    test("Then it should have the property statusCode with the status 404", () => {
       expect(customError).toHaveProperty(
         "statusCode",
         expectedCustomError.statusCode
       );
     });
-    test("The it should show the message `Endpoint not found`", () => {
+
+    test("Then it should have the property message and it shoudl show the message `Endpoint not found`", () => {
       expect(customError).toHaveProperty(
         "message",
         expectedCustomError.message
       );
     });
-    test("Then it should show the public message `Endpoint not found`", () => {
+
+    test("Then it should have the property publicMessage and it shoudl show the publicMessage `Endpoint not found", () => {
       expect(customError).toHaveProperty(
         "publicMessage",
         expectedCustomError.publicMessage
