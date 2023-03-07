@@ -1,7 +1,7 @@
 import createDebug from "debug";
 import mongoose from "mongoose";
 
-const debug = createDebug("users:database");
+const debug = createDebug("openboards:database");
 
 const connectDataBase = async (mongoUrl: string) => {
   mongoose.set("strictQuery", false);
