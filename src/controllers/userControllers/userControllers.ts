@@ -1,11 +1,13 @@
 import { type NextFunction, type Request, type Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../database/models/User.js";
-import { loginUserErrors } from "../utils/error.js";
-import statusCodes from "../utils/statusCodes.js";
-import type UserCredentials from "./types.js";
-import type CustomJwtPayload from "../types.js";
+import "../../loadEnvironment.js";
+import User from "../../database/models/User.js";
+import { loginUserErrors } from "../../utils/error.js";
+import statusCodes from "../../utils/statusCodes.js";
+import type CustomJwtPayload from "../../types.js";
+import CustomError from "../../CustomError/CustomError.js";
+import { type UserCredentials } from "./types.js";
 
 const {
   success: { okCode },
@@ -20,11 +22,9 @@ const loginUser = async (
   res: Response,
   next: NextFunction
 ) => {
-  const { password, username } = req.body;
-
+  const { username, password } = req.body;
   try {
     const user = await User.findOne({ username }).exec();
-
     if (!user) {
       next(loginUserErrors.userNotFound);
       return;
@@ -32,6 +32,7 @@ const loginUser = async (
 
     if (!(await bcrypt.compare(password, user.password))) {
       next(loginUserErrors.wrongPassword);
+      return;
     }
 
     const jwtPayload: CustomJwtPayload = {

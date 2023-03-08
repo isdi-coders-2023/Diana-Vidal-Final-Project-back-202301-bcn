@@ -8,7 +8,7 @@ module.exports = {
   overrides: [
     {
       extends: ["xo-typescript", "prettier"],
-      files: ["*.ts", "*.tsx"],
+      files: ["*.ts"],
       rules: {
         "@typescript-eslint/consistent-type-assertions": "off",
         "@typescript-eslint/consistent-type-definitions": "off",
@@ -24,6 +24,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+    "new-cap": ["error", { capIsNewExceptions: ["Router"] }],
     "no-implicit-coercion": "off",
   },
 };

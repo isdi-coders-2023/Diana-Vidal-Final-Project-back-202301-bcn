@@ -1,5 +1,6 @@
 import createDebug from "debug";
 import mongoose from "mongoose";
+import "../loadEnvironment.js";
 
 const debug = createDebug("openboards:database");
 

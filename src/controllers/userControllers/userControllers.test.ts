@@ -2,11 +2,11 @@ import { type Request, type Response } from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../database/models/User.js";
-import { loginUserErrors } from "../utils/error.js";
-import statusCodes from "../utils/statusCodes";
-import type UserCredentials from "./types";
+import User from "../../database/models/User.js";
+import { loginUserErrors } from "../../utils/error.js";
+import statusCodes from "../../utils/statusCodes";
 import loginUser from "./userControllers";
+import { type UserCredentials } from "./types.js";
 
 beforeEach(() => {
   jest.clearAllMocks();

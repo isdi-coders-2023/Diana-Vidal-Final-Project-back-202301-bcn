@@ -1,4 +1,5 @@
 import createDebug from "debug";
+import "../loadEnvironment.js";
 import { app } from "./app.js";
 
 const debug = createDebug("openboards:startServer");
