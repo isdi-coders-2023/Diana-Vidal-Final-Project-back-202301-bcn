@@ -1,7 +1,7 @@
 import { type NextFunction, type Request, type Response } from "express";
-import CustomError from "../../CustomError/CustomError";
+import CustomError from "../../../CustomError/CustomError";
 import { generalError, notFoundError } from "./errors";
-import statusCodes from "../../utils/statusCodes";
+import statusCodes from "../../../utils/statusCodes";
 
 const {
   clientError: { notFound },
@@ -17,7 +17,8 @@ const res: Partial<Response> = {
   json: jest.fn(),
 };
 
-const req = {} as Request;
+const req: Partial<Request> = {};
+
 const next: NextFunction = jest.fn();
 
 describe("Given a generalError middlware", () => {
@@ -29,7 +30,7 @@ describe("Given a generalError middlware", () => {
         "Something is wrong"
       );
 
-      generalError(expectedError, req, res as Response, next);
+      generalError(expectedError, req as Request, res as Response, next);
 
       expect(res.status).toHaveBeenCalledWith(notFound);
       expect(res.json).toHaveBeenCalledWith({
@@ -43,7 +44,12 @@ describe("Given a generalError middlware", () => {
       const expectedError = new Error();
       const expectedPublicMessage = "Something went wrong";
 
-      generalError(expectedError as CustomError, req, res as Response, next);
+      generalError(
+        expectedError as CustomError,
+        req as Request,
+        res as Response,
+        next
+      );
 
       expect(res.status).toHaveBeenCalledWith(internalServer);
       expect(res.json).toHaveBeenCalledWith({ error: expectedPublicMessage });
@@ -60,7 +66,7 @@ describe("Given a notFoundError middlewate", () => {
         "Endpoint not found"
       );
 
-      notFoundError(req, res as Response, next);
+      notFoundError(req as Request, res as Response, next);
 
       expect(next).toHaveBeenCalledWith(expectedCustomError);
     });

@@ -3,9 +3,9 @@ import request from "supertest";
 import jsw from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { MongoMemoryServer } from "mongodb-memory-server";
-import connectDataBase from "../../database/connectDataBase";
-import User from "../../database/models/User";
-import { app } from "../../server/app";
+import connectDataBase from "../../../database/connectDataBase";
+import User from "../../../database/models/User";
+import { app } from "../../app";
 import { type UserData } from "../../controllers/userControllers/types";
 
 let server: MongoMemoryServer;

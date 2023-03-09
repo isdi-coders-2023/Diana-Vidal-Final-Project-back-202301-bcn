@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { usersRouters } from "../routers/usersRouters/usersRouters.js";
+import { usersRouters } from "./routers/usersRouters/usersRouters.js";
 
 export const app = express();
 app.disable("x-powered-by");

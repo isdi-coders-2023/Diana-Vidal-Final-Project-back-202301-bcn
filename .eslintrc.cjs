@@ -10,7 +10,6 @@ module.exports = {
       extends: ["xo-typescript", "prettier"],
       files: ["*.ts"],
       rules: {
-        "@typescript-eslint/consistent-type-assertions": "off",
         "@typescript-eslint/consistent-type-definitions": "off",
       },
     },
