@@ -1,5 +1,4 @@
 import "./loadEnvironment.js";
-import mongoose from "mongoose";
 import connectDataBase from "./database/connectDataBase.js";
 import startServer from "./server/startServer.js";
 
