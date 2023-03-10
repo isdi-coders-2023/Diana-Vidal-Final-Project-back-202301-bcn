@@ -1,4 +1,6 @@
-const statusCodes = {
+import { type StatusCodesStructure } from "../types";
+
+const statusCodes: StatusCodesStructure = {
   clientError: { notFound: 404, badRequest: 400, unauthorized: 401 },
   serverError: {
     internalServer: 500,
