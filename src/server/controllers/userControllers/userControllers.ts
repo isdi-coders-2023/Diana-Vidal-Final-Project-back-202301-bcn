@@ -5,8 +5,8 @@ import "../../../loadEnvironment.js";
 import User from "../../../database/models/User.js";
 import { loginUserErrors } from "../../../utils/error.js";
 import statusCodes from "../../../utils/statusCodes.js";
-import type CustomJwtPayload from "../../../types.js";
 import { type UserCredentials } from "./types.js";
+import { type CustomJwtPayload } from "../../../types.js";
 
 const {
   success: { okCode },

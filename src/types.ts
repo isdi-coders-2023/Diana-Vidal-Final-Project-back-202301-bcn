@@ -1,8 +1,22 @@
 import { type JwtPayload } from "jsonwebtoken";
 
-interface CustomJwtPayload extends JwtPayload {
+export interface CustomJwtPayload extends JwtPayload {
   username: string;
   id: string;
 }
 
-export default CustomJwtPayload;
+export interface StatusCodesStructure {
+  clientError: {
+    notFound: number;
+    badRequest: number;
+    unauthorized: number;
+  };
+
+  serverError: {
+    internalServer: number;
+  };
+
+  success: {
+    okCode: number;
+  };
+}
