@@ -21,7 +21,6 @@ describe("Given a getGames controller", () => {
     test("Then it should call the status 200", async () => {
       const res: Partial<Response> = {
         status: jest.fn().mockReturnThis(),
-        json: jest.fn().mockResolvedValue(mockGame),
       };
 
       const req: Partial<Request> = {};
@@ -42,7 +41,6 @@ describe("Given a getGames controller", () => {
     test("Then it should call its next function", async () => {
       const res: Partial<Response> = {
         status: jest.fn().mockReturnThis(),
-        json: jest.fn().mockResolvedValue({}),
       };
       const req: Partial<Request> = {};
       const next = jest.fn();

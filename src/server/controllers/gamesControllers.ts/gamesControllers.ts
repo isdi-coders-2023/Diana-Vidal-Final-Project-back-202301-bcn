@@ -1,7 +1,7 @@
 import { type Response, type NextFunction, type Request } from "express";
-import CustomError from "../../../CustomError/CustomError";
-import { Game } from "../../../database/models/Games/Games";
-import statusCodes from "../../../utils/statusCodes";
+import CustomError from "../../../CustomError/CustomError.js";
+import { Game } from "../../../database/models/Games/Games.js";
+import statusCodes from "../../../utils/statusCodes.js";
 
 const {
   success: { okCode },
