@@ -1,4 +1,4 @@
-import { type StatusCodesStructure } from "../types";
+import { type StatusCodesStructure } from "../types/users/types";
 
 const statusCodes: StatusCodesStructure = {
   clientError: { notFound: 404, badRequest: 400, unauthorized: 401 },
