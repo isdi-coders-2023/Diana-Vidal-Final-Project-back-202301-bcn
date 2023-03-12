@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { usersRouters } from "./routers/usersRouters/usersRouters.js";
+import gamesRouteres from "./routers/gamesRouters/gamesRouters.js";
 
 export const app = express();
 app.disable("x-powered-by");
@@ -20,4 +21,4 @@ const options: cors.CorsOptions = {
 app.use(cors(options));
 
 app.use(express.json());
-app.use("/openboards", usersRouters);
+app.use("/openboards", usersRouters, gamesRouteres);
