@@ -4,7 +4,7 @@ import jsw from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { MongoMemoryServer } from "mongodb-memory-server";
 import connectDataBase from "../../../database/connectDataBase";
-import User from "../../../database/models/User";
+import User from "../../../database/models/Users/User";
 import { app } from "../../app";
 import { type UserData } from "../../controllers/userControllers/types";
 

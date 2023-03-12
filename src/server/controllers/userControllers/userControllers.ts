@@ -2,7 +2,7 @@ import { type NextFunction, type Request, type Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import "../../../loadEnvironment.js";
-import User from "../../../database/models/User.js";
+import User from "../../../database/models/Users/User.js";
 import { loginUserErrors } from "../../../utils/error.js";
 import statusCodes from "../../../utils/statusCodes.js";
 import { type UserCredentials } from "./types.js";

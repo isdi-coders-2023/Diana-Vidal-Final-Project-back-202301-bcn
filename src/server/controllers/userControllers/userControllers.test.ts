@@ -2,7 +2,7 @@ import { type Request, type Response } from "express";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import User from "../../../database/models/User";
+import User from "../../../database/models/Users/User";
 import { loginUserErrors } from "../../../utils/error";
 import statusCodes from "../../../utils/statusCodes";
 import loginUser from "./userControllers";
