@@ -1,9 +1,11 @@
-import { type Request, type Response } from "express";
+import e, { type Request, type Response } from "express";
 import CustomError from "../../../CustomError/CustomError";
 import { Game } from "../../../database/models/Games/Games";
 import { type GameStructure } from "../../../types/games/types";
 import statusCodes from "../../../utils/statusCodes";
 import { getGames } from "./gamesControllers";
+
+beforeEach(() => jest.resetAllMocks());
 
 const mockGame: GameStructure = {
   game: "Némesis",
@@ -13,8 +15,6 @@ const mockGame: GameStructure = {
   bio: "sdfasdfas",
   plazasLibres: 3,
 };
-
-beforeEach(() => jest.resetAllMocks());
 
 describe("Given a getGames controller", () => {
   describe("When it receives a response", () => {
